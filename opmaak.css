@@ -1,7 +1,6 @@
 body{
 	margin: 0;
 	background: #f1f1f1;
-	min-width: 1500px;
 }
 
 nav{
@@ -9,7 +8,7 @@ nav{
 	top: 0;
 	left: 30px;
 	right: 30px;
-	min-width: 800px;
+	min-width: 700px;
 	display: inline;
 	background: #444;
 	font-family: Helvetica, sans-serif;

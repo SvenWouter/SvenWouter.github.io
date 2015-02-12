@@ -3,6 +3,7 @@
 	<head>
 		<title>Multiplayer browser games - Sven & Wouter</title>
 		<link rel = "stylesheet" type = "text/css" href = "opmaak.css"/>
+		<script src = "jquery-1.11.2.min.js"></script>
 	</head>
 	
 	<body>
@@ -16,5 +17,52 @@
 			<a href = "#">Raakvlakken</a>
 			<a href = "#">Bronvermelding</a>
 		</nav>
+		
+		<?php
+		#
+# build the API URL to call
+#
+
+$params = array(
+	'api_key'	=> '81e7e11aeac57ac668609d316f6388ce',
+	'method'	=> 'flickr.photos.getInfo',
+	'photo_id'	=> '251875545',
+	'format'	=> 'php_serial',
+);
+
+$encoded_params = array();
+
+foreach ($params as $k => $v){
+
+	$encoded_params[] = urlencode($k).'='.urlencode($v);
+}
+
+
+#
+# call the API and decode the response
+#
+
+$url = "https://api.flickr.com/services/rest/?".implode('&', $encoded_params);
+
+$rsp = file_get_contents($url);
+
+$rsp_obj = unserialize($rsp);
+
+
+#
+# display the photo title (or an error if it failed)
+#
+
+if ($rsp_obj['stat'] == 'ok'){
+
+	$photo_title = $rsp_obj['photo']['title']['_content'];
+
+	echo "Title is $photo_title!";
+}else{
+
+	echo "Call failed!";
+}
+		?>
+		
 	</body>
 </html>
