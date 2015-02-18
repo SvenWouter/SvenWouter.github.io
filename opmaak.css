@@ -1,6 +1,6 @@
 body{
 	margin: 0;
-	background: #f1f1f1;
+	background: url("http://binaryfortress.cachefly.net/Protected/expiretime=1424390400;badurl=aHR0cDovL3d3dy52b2ljZWJvdC5uZXQ=/5b56405707661c0721287ede5c823dc8/WPF/Images/128/WallpaperFusion-on-the-edge-1920x1200-W.jpg") repeat-x scroll center top;
 }
 
 .root{
@@ -27,7 +27,9 @@ header{
 nav{
 	padding: 20px 0px 20px 0px;
 	width: 100%;
-	background: #444;
+	background: #eee;
+	border: 1px solid #ddd;
+	border-radius: 5px;
 }
 
 nav a{
