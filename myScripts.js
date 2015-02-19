@@ -1,10 +1,6 @@
 $(document).ready(function(){
 	
-	$('#text_value').click(function() {
-		var text_value = $("#text").val();	
-		var aantal = 104;
-		getPhotos(text_value, aantal);
-		
+		getPhotos();
 		
 		$("nav a").hover(function(){
 			$(this).stop().animate({color: "green"}, 300);
@@ -12,10 +8,11 @@ $(document).ready(function(){
 			$(this).stop().animate({color: "white"}, 300);
 		});
 		
-	})
 });
 
-function getPhotos(text_value, aantal){
+function getPhotos(){
+	var text_value = $("#text").val();	
+	var aantal = 104;
 	$.getJSON("https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&text=" + text_value + "&per_page="+ aantal + " &format=json&jsoncallback=?",
 		function(data){
 			var id = "";
