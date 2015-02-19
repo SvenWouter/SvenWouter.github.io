@@ -11,7 +11,6 @@
 	<body>
 		<div class = "root">
 			<header>
-				<h1 id = "title">Multiplayer Browser Games</h1>
 				<nav>
 					<a href = "#">Onderwerp</a>
 					<a href = "#">Techniek</a>
@@ -22,12 +21,17 @@
 					<a href = "#">Bronvermelding</a>
 				</nav>
 			</header>
+			<article id = "content">
+				<h1 id = "title">Multiplayer Browser Games</h1>
+				<label>Zoeken:</label>
+				<input type="text" id="text" name="name" value="multiplayer browser games" />
+				<input type="button" id="text_value" value="Gaan!" onclick = "getPhotos()"/>
 		
-		<label>Zoeken:</label>
-		<input type="text" id="text" name="name" value="multiplayer browser games" />
-		<input type="button" id="text_value" value="Gaan!" onclick = "getPhotos()"/>
-		
-		<div id="flickrTest"></div>
+				<section id="flickrTest"></section>
+			</article>
+			<footer>
+				<p id = "copyright">Wouter Sondagh & Sven Luehof © 2015</p>
+			</footer>
 		</div>
 	</body>
 </html>

@@ -1,6 +1,6 @@
 body{
 	margin: 0;
-	background: url("http://binaryfortress.cachefly.net/Protected/expiretime=1424390400;badurl=aHR0cDovL3d3dy52b2ljZWJvdC5uZXQ=/5b56405707661c0721287ede5c823dc8/WPF/Images/128/WallpaperFusion-on-the-edge-1920x1200-W.jpg") repeat-x scroll center top;
+	background: url("http://binaryfortress.cachefly.net/Protected/expiretime=1424390400;badurl=aHR0cDovL3d3dy52b2ljZWJvdC5uZXQ=/5b56405707661c0721287ede5c823dc8/WPF/Images/128/WallpaperFusion-on-the-edge-1920x1200-W.jpg") fixed center top;
 }
 
 .root{
@@ -17,23 +17,46 @@ header{
 }
 
 #title{
-	text-align: center;
 	text-transform: uppercase;
-	text-shadow: 0px 0px 2px black;
-	color: #ffffff;
 	font-size: 35px;
+	background: #eee;
+	padding: 30px 20px 50px 20px;
+	width: 600px;
+	margin: 0 auto 50px auto;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 nav{
+	position: fixed;
+	top: 0;
+	left: 0;
 	padding: 20px 0px 20px 0px;
 	width: 100%;
-	background: #eee;
-	border: 1px solid #ddd;
-	border-radius: 5px;
+	background: black;
+	text-align: center;
 }
 
 nav a{
 	color: #ffffff;
 	text-transform: uppercase;
 	text-decoration: none;	
+	padding: 15px;
+}
+
+#content{
+	background-color: white;
+	padding: 0px 20px 20px 20px;
+	text-align: center;
+	border-radius: 8px;
+	box-shadow: 0px 0px 2px gray;
+}
+
+footer{
+	padding: 40px 0px 40px 0px;
+	color: white;
+}
+
+#copyright{
+	float: right;
 }

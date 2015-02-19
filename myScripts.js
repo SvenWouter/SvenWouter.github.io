@@ -32,4 +32,8 @@ function getPhotos(){
 			$("#flickrTest").html(images);
 		});
 }
+
+function emphasizePhoto(){
+	$("#overlay").css("display", "block");
+}
 	
