@@ -3,7 +3,7 @@ $(document).ready(function(){
 		getPhotos();
 		
 		$("nav a").hover(function(){
-			$(this).stop().animate({color: "#545454"}, 300);
+			$(this).stop().animate({color: "green"}, 300);
 		}, function(){
 			$(this).stop().animate({color: "#ffffff"}, 300);
 		});
@@ -16,7 +16,7 @@ $(document).ready(function(){
 		
 		$("#searchValue").keypress(function(e){
 			if(e.keyCode == 13)
-				$("#searchBtn").click();
+				getPhotos();
 		});
 
 });
