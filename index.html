@@ -9,6 +9,9 @@
 	</head>
 	
 	<body>
+		<div class = "overlay" onclick = "hidePhotoSection()"></div>
+		<div id = "bigPhotoSection"></div>
+		
 		<div class = "root">
 			<header>
 				<nav>
@@ -19,16 +22,17 @@
 					<a href = "#">Protocol</a>
 					<a href = "#">Raakvlakken</a>
 					<a href = "#">Bronvermelding</a>
+					<input type = "text" id = "searchValue" placeholder = "Search" value = "Multiplayer Browser Games"/> 
 				</nav>
 			</header>
+			
 			<article id = "content">
-				<h1 id = "title">Multiplayer Browser Games</h1>
-				<label>Zoeken:</label>
-				<input type="text" id="text" name="name" value="multiplayer browser games" />
-				<input type="button" id="text_value" value="Gaan!" onclick = "getPhotos()"/>
-		
-				<section id="flickrTest"></section>
+				<section id = "title">
+					<h1>Multiplayer Browser Games</h1>
+				</section>
+				<section id="flickrResult"></section>
 			</article>
+			
 			<footer>
 				<p id = "copyright">Wouter Sondagh & Sven Luehof © 2015</p>
 			</footer>
