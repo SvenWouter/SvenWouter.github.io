@@ -3,7 +3,7 @@ $(document).ready(function(){
 		getPhotos();
 		
 		$("nav a").hover(function(){
-			$(this).stop().animate({color: "green"}, 300);
+			$(this).stop().animate({color: "#FFA812"}, 300);
 		}, function(){
 			$(this).stop().animate({color: "#ffffff"}, 300);
 		});
@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 function getPhotos(){
 	var searchBtn = $("#searchValue").val();	
-	var aantal = 54;
+	var aantal = 56;
 	$.getJSON("https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&text=" + searchBtn + "&per_page="+ aantal + " &format=json&jsoncallback=?",
 		function(data){
 			var id = "";

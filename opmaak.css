@@ -1,7 +1,7 @@
 body{
 	margin: 0;
 	font-family: sans-serif;
-	background: url("http://binaryfortress.cachefly.net/Protected/expiretime=1424390400;badurl=aHR0cDovL3d3dy52b2ljZWJvdC5uZXQ=/5b56405707661c0721287ede5c823dc8/WPF/Images/128/WallpaperFusion-on-the-edge-1920x1200-W.jpg") fixed center top;
+	background: url(http://subtlepatterns.com/patterns/dark_embroidery.png);
 }
 
 .overlay{
@@ -16,26 +16,12 @@ body{
 	opacity: 0.7;
 }
 
-.root{
-	margin: 0 auto;
-	width: 1200px;
-	min-width: 1200px;
-}
-
 header{
-	min-height: 100px;
-	width: 100%;
-	font-size: 15px;
-	z-index: 1;
-}
-
-#title{
 	text-transform: uppercase;
-	font-size: 35px;
-	padding: 10px 0px 10px 0px;
-	width: 100%;
-	margin: 0 auto 40px auto;
-	border-bottom: 1px solid #ddd;
+	font-size: 23px;
+	margin: 100px 0px 0px 0px;
+	background: #ccc;
+	padding: 25px;
 }
 
 nav{
@@ -44,8 +30,10 @@ nav{
 	left: 0;
 	padding: 20px 0px 20px 0px;
 	width: 100%;
-	background: #003687;
+	background: #8B4C39;
 	text-align: center;
+	border-bottom: 1px solid white;
+	opacity: 0.9;
 }
 
 nav a{
@@ -61,33 +49,34 @@ nav a{
 	border-radius: 2em;
 	padding: 16px 0px 16px 15px;
 	outline: none;
-	width: 80%;
+	width: 60%;
 	color: white;
 	font-size: 20px;
-	margin-bottom: 40px;
+	margin: 25px auto 25px auto;
 }
 
-#content{
-	padding: 0px 20px 20px 20px;
-	text-align: center;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	color: #545454;
+article{
+	margin: 0 auto;
+	width: 1200px;
+	min-width: 1200px;
+	color: white;
+	background: #eee;
 }
 
 footer{
-	padding: 40px 0px 40px 0px;
-	color: #545454;
-}
-
-#copyright{
-	float: right;
+	padding: 15px 0px 15px 0px;
+	margin: 100px 0px 0px 0px;
+	color: white;
+	width: 100%;
+	background: #818181;
+	opacity: 0.7;
 }
 
 .flickrImg{
 	padding: 5px;
 	margin: 5px;
-	box-shadow: 0px 0px 3px gray;
+	box-shadow: 0px 0px 4px black;
+	background: white;
 }
 
 .flickrImg:hover{
