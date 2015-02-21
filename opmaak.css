@@ -4,18 +4,6 @@ body{
 	background: url(http://subtlepatterns.com/patterns/dark_embroidery.png);
 }
 
-.overlay{
-	z-index: 2;
-	display: none;
-	position: fixed;
-	background: black;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	opacity: 0.7;
-}
-
 header{
 	text-transform: uppercase;
 	font-size: 23px;
@@ -43,18 +31,6 @@ nav a{
 	padding: 15px;
 }
 
-#searchValue{
-	border: 1px solid #ccc;
-	background: #545454;
-	border-radius: 2em;
-	padding: 16px 0px 16px 15px;
-	outline: none;
-	width: 60%;
-	color: white;
-	font-size: 20px;
-	margin: 25px auto 25px auto;
-}
-
 article{
 	margin: 0 auto;
 	width: 1200px;
@@ -63,36 +39,28 @@ article{
 	background: #eee;
 }
 
+section{
+	padding: 90px;
+}
+
 footer{
-	padding: 15px 0px 15px 0px;
+	border-top: 1px solid white;
 	margin: 100px 0px 0px 0px;
 	color: white;
 	width: 100%;
 	background: #818181;
 	opacity: 0.7;
+	height: 200px;
 }
 
-.flickrImg{
-	padding: 5px;
-	margin: 5px;
-	box-shadow: 0px 0px 4px black;
-	background: white;
+.row{
+	width: 1200px;
+	min-width: 1200px;
+	margin: 0 auto;
 }
 
-.flickrImg:hover{
-	cursor: pointer;
-}
-
-#bigPhotoSection{
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	z-index: 3;
-	display: none;
-}
-
-#bigPhotoSection img{
-	position: absolute;
-	transform: translate(-50%, -50%);
-	border: 20px solid #eee;
+.col{
+	text-align: center;
+	width: 400px;
+	float: left;
 }

@@ -1,0 +1,48 @@
+.overlay{
+	z-index: 2;
+	display: none;
+	position: fixed;
+	background: black;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0.7;
+}
+
+#searchValue{
+	border: 1px solid #ccc;
+	background: #545454;
+	border-radius: 2em;
+	padding: 16px 0px 16px 15px;
+	outline: none;
+	width: 50%;
+	color: white;
+	font-size: 20px;
+	margin: 50px 25% 0px 25%;
+}
+
+.flickrImg{
+	padding: 5px;
+	margin: 5px;
+	box-shadow: 0px 0px 4px black;
+	background: white;
+}
+
+.flickrImg:hover{
+	cursor: pointer;
+}
+
+#bigPhotoSection{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 3;
+	display: none;
+}
+
+#bigPhotoSection img{
+	position: absolute;
+	transform: translate(-50%, -50%);
+	border: 20px solid #eee;
+}

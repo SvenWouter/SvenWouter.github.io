@@ -2,18 +2,6 @@ $(document).ready(function(){
 	
 		getPhotos();
 		
-		$("nav a").hover(function(){
-			$(this).stop().animate({color: "#FFA812"}, 300);
-		}, function(){
-			$(this).stop().animate({color: "#ffffff"}, 300);
-		});
-		
-		$("#1").hover(function(){
-			$(this).stop().animate({'width' : '100px', 'height' : '100px', 'padding' : '15px'}, 300);
-		}, function(){
-			$(this).stop().animate({'height' : '50px', 'width' : '50px', 'padding' : '5px'}, 300);
-		});
-		
 		$("#searchValue").keypress(function(e){
 			if(e.keyCode == 13)
 				getPhotos();
@@ -23,7 +11,7 @@ $(document).ready(function(){
 
 function getPhotos(){
 	var searchBtn = $("#searchValue").val();	
-	var aantal = 56;
+	var aantal = 60;
 	$.getJSON("https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&text=" + searchBtn + "&per_page="+ aantal + " &format=json&jsoncallback=?",
 		function(data){
 			var id = "";
