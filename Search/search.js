@@ -1,3 +1,4 @@
+var pagina = 1;
 $(document).ready(function(){
 	
 		getPhotos();
@@ -6,13 +7,27 @@ $(document).ready(function(){
 			if(e.keyCode == 13)
 				getPhotos();
 		});
-
+		
 });
+
+function nextPage(){
+	pagina++;
+	getPhotos();
+}
+
+function previousPage(){
+	if(pagina > 1)
+	{ pagina --}
+	else if(pagina <= 1)
+	{ pagina = 1}
+
+	getPhotos()
+}
 
 function getPhotos(){
 	var searchBtn = $("#searchValue").val();	
 	var aantal = 60;
-	$.getJSON("https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&text=" + searchBtn + "&per_page="+ aantal + " &format=json&jsoncallback=?",
+	$.getJSON("https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&text=" + searchBtn + "&per_page="+ aantal + "&page=" + pagina + "&format=json&jsoncallback=?",
 		function(data){
 			var id = "";
 			var farm = "";
