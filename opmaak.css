@@ -33,10 +33,9 @@ nav a{
 
 article{
 	margin: 0 auto;
-	width: 1200px;
+	width: 100%;
 	min-width: 1200px;
 	color: white;
-	background: #eee;
 }
 
 section{
