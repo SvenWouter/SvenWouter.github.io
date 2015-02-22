@@ -24,28 +24,19 @@
 			<a href = "../Search">Search</a>
 		</nav>
 		<article>
-			<header>
+			<header id = "searchHeader">
 				<b>Search</b>
 				<input type = "text" id = "searchValue" placeholder = "Search and press return" value = "Multiplayer Browser Games"/> 
+				<b>Results</b>
+				<input type = "text" id = "resultCount" value = "60"/>
+				<input type = "button" id = "searchBtn" value = "Search" onclick = "getPhotos()"/>
 			</header>
-			<section id="flickrResult"></section>
+			<section id="flickrResult">
+				<table id = "flickrTable">
+						
+					
+				</table>
+			</section>
 		</article>
-		</div>
-		<footer>
-			<div class = "row">
-				<div class = "col">
-					<h4>Copyright</h4>
-					<p>Wouter Sondagh & Sven Luehof © 2015</p>
-				</div>
-				<div class = "col">
-					<h4>About Us</h4>
-					<p>Wij zijn stoere boys</p>
-				</div>
-				<div class = "col">
-					<h4>Scroll</h4>
-					<p>Naar boven</p>
-				</div>
-			</div>
-		</footer>
 	</body>
 </html>
