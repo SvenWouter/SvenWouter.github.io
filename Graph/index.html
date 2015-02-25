@@ -3,16 +3,15 @@
 	<head>
 		<title>Multiplayer browser games - Sven & Wouter</title>
 		<link rel = "stylesheet" type = "text/css" href = "../opmaak.css"/>
-		<link rel = "stylesheet" type = "text/css" href = "search.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "graph.css"/>
 		<script src = "../jslibs/jquery-1.11.2.min.js"></script>
 		<script src = "../jslibs/jquery.color-2.1.2.min.js"></script>
+		<script src = "../jslibs/jquery.flot.js"></script>
 		<script src = "../script.js"></script>
-		<script src = "search.js"></script>
+		<script src = "graph.js"></script>
 	</head>
 	
 	<body>
-		<div class = "overlay" onclick = "hidePhotoSection()"></div>
-		<div id = "bigPhotoSection"></div>
 		<nav>
 			<a href = "../">Home</a>
 			<a href = "../Techniek">Techniek</a>
@@ -24,18 +23,12 @@
 			<a href = "../Graph">Graph</a>
 			<a href = "../Search">Search</a>
 		</nav>
-		<article>
-			<header id = "searchHeader">
-				<b>Search</b>
-				<input type = "text" id = "searchValue" placeholder = "Search and press return" value = "Multiplayer Browser Games"/> 
-				<b>Results</b>
-				<input type = "text" id = "resultCount" value = "60"/>
-				<input type = "button" id = "searchBtn" value = "Search" onclick = "getPhotos()"/>
+		<article id = "Flot">
+			<header>
+			
 			</header>
-			<section id="flickrResult">
-				<table id = "flickrTable">
-										
-				</table>
+			<section id = "placeholder">
+			
 			</section>
 		</article>
 	</body>
