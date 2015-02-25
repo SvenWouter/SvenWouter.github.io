@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Multiplayer browser games - Sven & Wouter</title>
+		<link rel = "stylesheet" type = "text/css" href = "opmaak.css"/>
+		<script src = "jquery-1.11.2.min.js"></script>
+		<script src = "jquery.color-2.1.2.min.js"></script>
+	</head>
+	
+	<body>
+		<nav>
+			<a href = "../Onderwerp">Onderwerp</a>
+			<a href = "../Techniek">Techniek</a>
+			<a href = "../Gebruik">Gebruik</a>
+			<a href = "../Doel">Doel</a>
+			<a href = "../Protocol.html">Protocol</a>
+			<a href = "../Raakvlakken">Raakvlakken</a>
+			<a href = "../Bronvermelding">Bronvermelding</a>
+			<a href = "../Search">Search</a>
+		</nav>
+		
+		<h1 id="titel" class="text">Protocollen</h1>
+		<p class="text">
+		Om een (multiplayer) browsergame te spelen is er een verbinding nodig tussen de de speler en het spel. Met andere woorden, er is een verbinding tussen de webclient en de webserver nodig. Hiervoor is het HTTP protocol nodig. We zullen HTTP even kort behandelen.
+		</p>
+		
+		<p class="text">
+		<a href="http://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> is dus een protocol. Hierin staat beschreven welke stappen er moeten worden genomen om iets te bereiken en ook hoe die stappen moeten worden uitgevoerd. HTTP is een protocol dat de communicatie tussen de webserver en de webclient vastlegt. Wat vast is gelegd zijn vragen die een webclient kan stellen aan de server en antwoorden die de server hierop kan geven. Elke vraag bestaat uit een URL, een requestmethode en headervelden. Voorbeelden van de requestmethoden zijn GET en DELETE. Headervelden bestaan uit velden als User-Agent en Connection. Bij User-Agent geef je mee welke browser je gebruikt en bij Connection wordt bepaald hoelang de connectie tot stand moet blijven. De server ontvangt deze request en neemt deze in behandeling. Hij zal uiteindelijk antwoorden met een resultaatcode, headervelden en de body. Resultaatcodes zijn 3 cijferige codes die laten zien wat er met de aanvraag is gebeurd. Het liefst krijg je 200 terug, dan is alles goed gegaan. De meest bekende is misschien wel 404: Page not found. De pagina blijkt niet te bestaan. In de body staat de daadwerkelijke boodschap. Vaak zal dit HTML zijn.
+		</p>
+		
+		<p class="text">
+		Om een game te realiseren zijn er nu een aantal manieren. Elke manier met zijn eigen voor- en nadelen.
+		</p>
+		
+		<p class="text">
+		E&eacute;n van die manieren is AJAX/Long Polling. Hierbij hou je altijd een verbinding open met de server. De server pushed iets terug zodra deze iets te melden heeft. Nadat dit antwoord is ontvangen wordt er vanuit de webclient meteen een nieuwe HTTPrequest uitgezonden en zo wordt er weer een nieuwe actieve lijn opgezet. Nadeel van deze manier is de performance. Het opzetten van een nieuwe connectie kost elke keer de roundtriptime. Aan de andere kant, het maakt het wel makkelijk om een crossplatform game te maken.
+		</p>
+		
+		<p class="text">
+		Een ander manier is de AJAX server push waarbij de server een lading aan notifications kan sturen naar de webclient zonder dat deze een nieuwe request hoeft te sturen. De verbinding blijft tot stand omdat de server de response niet afrond. Het nadeel hiervan is dat het verkeer &eacute;&eacute;n richtingsverkeer is geworden. Update vanaf de Webclient kunnen niet meer richting de server worden gestuurd. Hiervoor moet toch weer een nieuwe request gestuurd worden.
+		</p>
+		
+		<p class="text">
+		De derde mogelijkheid is gebruik maken van TCP. Met TCP is het mogelijk om verkeer in 2 richtingen tot stand te houden. Voordeel is ook dat je van het stricte HTTP paradigma af bent. Van TCP gebruik maken is echter een stuk lastiger dan gebruik maken van bovengenoemde manieren. Ook is het lastig om een spel crossplatform te maken met TCP omdat er verschillende bugs op verschillende operating systems kunnen ontstaan.
+		</p>
+		
+		<p class="text">
+		Als laatste optie die we hier gaan behandelen is UDP. Deze lijkt in veel opzichten op TCP, UDP is een soort versimpelde versie hiervan. Waar TCP delivery garandeert, is die garantie bij UDP er niet. Dit maakt wel dat UDP sneller is dan TCP. Ook is de volgorde dat pakketjes worden afgeleverd niet gegarandeerd. Als je tien pakketjes stuurt kan het dus zijn dat pakketje 6 eerder aan komt dan pakketje 3. Dit kan een probleem zijn voor je spel.
+		</p>
+		
+		
+		
+	</body>
