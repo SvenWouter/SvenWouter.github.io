@@ -18,6 +18,7 @@ $(document).ready(function(){
 			$(this).stop().animate({backgroundColor: "#336699"}, 300);
 		});
 
+		$("#bigPhotoSection").click(nextPhoto);
 });
 
 function getPhotos(){
@@ -43,15 +44,17 @@ function getPhotos(){
 				server = set.server;
 				if(count == 4)
 					count = 1;
-				$("#row" + count).append("<td><img class = 'flickrImg' id = '" + i + "' onclick = 'enlargePhoto(" + i + ")' src = 'https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_q" + ".jpg'/></td>"); 
+				$("#row" + count).append("<td><img class = 'flickrImg' src = 'https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_q" + ".jpg'/></td>"); 
 			});
+			
+			$(".flickrImg").click(enlargePhoto);
 		});
 }
 
-function enlargePhoto(id){
+function enlargePhoto(){
 	$(".overlay").fadeIn(1000);
-	var src = $("#" + id).attr("src");
-	var enhancedSrc = src.substring(0, src.length - 5) + "c.jpg";
+	var src = $(this).attr("src");
+	var enhancedSrc = src.replace("_q.jpg", "_c.jpg");
 	var image = "<img src = '" + enhancedSrc + "'/>";
 	$("#bigPhotoSection").html(image);
 	$("#bigPhotoSection").fadeIn(1000);

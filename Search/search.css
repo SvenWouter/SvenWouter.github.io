@@ -15,16 +15,23 @@ body{
 	opacity: 0.7;
 }
 
-article{
+#flickrDiv{
 	width: 100%;
 	color: white;
+	font-size: 20px;
 }
 
-section{
+#flickrResult{
 	overflow-x: scroll;
+	overflow-y: hidden;
 	width: auto;
 	white-space: nowrap;
 	width: 100%;
+}
+
+#search{
+	margin: 0px 0px 50px 50px;
+	text-transform: uppercase;
 }
 
 #searchValue, #resultCount{

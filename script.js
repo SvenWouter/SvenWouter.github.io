@@ -6,4 +6,8 @@ $(document).ready(function(){
 			$(this).stop().animate({color: "#FFFFFF"}, 300);
 	});
 	
+	$.each($(".source"), function(){
+		
+	});
+	
 });
