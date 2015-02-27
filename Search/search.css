@@ -1,3 +1,8 @@
+body{
+	min-width: 1120px;
+	min-height: 700px;
+}
+
 .overlay{
 	z-index: 2;
 	display: none;
@@ -8,6 +13,18 @@
 	bottom: 0;
 	right: 0;
 	opacity: 0.7;
+}
+
+article{
+	width: 100%;
+	color: white;
+}
+
+section{
+	overflow-x: scroll;
+	width: auto;
+	white-space: nowrap;
+	width: 100%;
 }
 
 #searchValue, #resultCount{

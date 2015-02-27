@@ -23,15 +23,17 @@ $(document).ready(function(){
 function getPhotos(){
 	var searchQuery = $("#searchValue").val();	
 	var aantal = $("#resultCount").val();
-	var rowSize = Math.ceil(aantal / 3);
-	var count = -1;
+	var count = 0;
+	$.each($("#flickrTable tr"), function(){
+		$(this).empty();
+	});
+	
 	$.getJSON("https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&text=" + searchQuery + "&per_page="+ aantal + " &format=json&jsoncallback=?",
 		function(data){
 			var id = "";
 			var farm = "";
 			var secret = "";
 			var server = "";
-			var images = "<tr>";
 	
 			$.each(data.photos.photo, function(i,set){
 				count++;
@@ -39,29 +41,30 @@ function getPhotos(){
 				farm = set.farm;
 				secret = set.secret;
 				server = set.server;
-				if(count == rowSize){
-					count = 0;
-					images += "</tr><tr>";
-				} 
-				images += "<td><img class = 'flickrImg' id = '" + i + "' onclick = 'enlargePhoto(" + i + ")' src = 'https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_q" + ".jpg'/></td>"
+				if(count == 4)
+					count = 1;
+				$("#row" + count).append("<td><img class = 'flickrImg' id = '" + i + "' onclick = 'enlargePhoto(" + i + ")' src = 'https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_q" + ".jpg'/></td>"); 
 			});
-			images += "</tr>";
-			$("#flickrTable").html(images);
 		});
 }
 
 function enlargePhoto(id){
-	$(".overlay").css("display", "block");
+	$(".overlay").fadeIn(1000);
 	var src = $("#" + id).attr("src");
 	var enhancedSrc = src.substring(0, src.length - 5) + "c.jpg";
 	var image = "<img src = '" + enhancedSrc + "'/>";
 	$("#bigPhotoSection").html(image);
-	$("#bigPhotoSection").css("display", "block");
+	$("#bigPhotoSection").fadeIn(1000);
 }
 
 function hidePhotoSection(){
-	$(".overlay").css("display", "none");
-	$("#bigPhotoSection").html("");
-	$("#bigPhotoSection").css("display", "none");
+	$(".overlay").fadeOut(500);
+	$("#bigPhotoSection").fadeOut(500, function(){
+		$("#bigPhotoSection").empty();
+	});
+}
+
+function nextPhoto(){
+	
 }
 	
