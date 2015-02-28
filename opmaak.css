@@ -1,15 +1,21 @@
+@font-face{
+	font-family: "Avenir Next";
+	src: url("font/AvenirNext-Regular.ttf");
+	font-weight: normal;
+}
+
 body{
 	margin: 0;
 	padding: 0;
-	background: #222;
-	font-family: sans-serif;
+	background: #1DD2AF;
+	font-family: "Avenir Next", sans-serif;
 }
 
 nav{
-	margin: 0px 0px 75px 0px;
+	margin: 0px 0px 0px 0px;
 	padding: 20px 0px 20px 0px;
 	width: 100%;
-	background: #8B4C39;
+	background: rgb(44, 62, 80);
 }
 
 nav a{
@@ -25,14 +31,21 @@ header{
 }
 
 main{
-	width: 1200px;
-	min-width: 1200px;
-	margin: 20px auto;
+	width: 50%;
+	margin: 60px auto;
 	opacity: 0.8;
 	background: white;
-	padding: 20px;
+	padding: 20px 35px;
 	background: white;
+	font-size: 130%;
 }
+
+footer{
+	width: 100%;
+	padding: 15px 0px;
+	text-align: right;
+}
+
 
 ::-webkit-scrollbar {
     width: 11px;
