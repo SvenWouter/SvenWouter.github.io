@@ -33,6 +33,12 @@
 					<p>
 					Om een (multiplayer) browsergame te spelen is er een verbinding nodig tussen de de speler en het spel. Met andere woorden, er is een verbinding tussen de webclient en de webserver nodig. Hiervoor is het HTTP protocol nodig. We zullen HTTP even kort behandelen.
 					</p>
+					
+					<figure style = "float: right; margin-bottom: 0px">
+						<img src = "https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png" alt = "Voorbeeld van een html request" style = "width:400px">
+						<figcaption style = "font-size: x-small">Een voorbeeld van hoe de code van een request is opgebouwd</figcaption>
+					</figure>
+					
 					<p>
 					<a href = "http://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol" class = "source">HTTP</a> is dus een protocol. Hierin staat beschreven welke stappen er moeten worden genomen om iets te bereiken en ook hoe die stappen moeten worden uitgevoerd. HTTP is een protocol dat de communicatie tussen de webserver en de webclient vastlegt. Wat vast is gelegd zijn vragen die een webclient kan stellen aan de server en antwoorden die de server hierop kan geven. Elke vraag bestaat uit een URL, een requestmethode en headervelden. Voorbeelden van de requestmethoden zijn GET en DELETE. Headervelden bestaan uit velden als User-Agent en Connection. Bij User-Agent geef je mee welke browser je gebruikt en bij Connection wordt bepaald hoelang de connectie tot stand moet blijven. De server ontvangt deze request en neemt deze in behandeling. Hij zal uiteindelijk antwoorden met een resultaatcode, headervelden en de body. Resultaatcodes zijn 3 cijferige codes die laten zien wat er met de aanvraag is gebeurd. Het liefst krijg je 200 terug, dan is alles goed gegaan. De meest bekende is misschien wel 404: Page not found. De pagina blijkt niet te bestaan. In de body staat de daadwerkelijke boodschap. Vaak zal dit HTML zijn. Voor de complete lijst klik <a href = "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" class = "source">hier</a>.
 					</p>
