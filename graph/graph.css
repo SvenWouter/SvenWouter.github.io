@@ -1,4 +1,8 @@
-main, #placeholder{
+main{
+	height: 600px;
+}
+
+#placeholder{
 	width: 600px;
 	height: 600px;
 }

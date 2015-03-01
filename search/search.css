@@ -102,3 +102,13 @@ main{
 	transform: translate(-50%, -50%);
 	border: 20px solid #eee;
 }
+
+#previousPhoto, #nextPhoto{
+	height: 100%;
+	cursor: pointer;
+	width: 20%;
+}
+
+#nextPhoto{
+	float: right;
+}
