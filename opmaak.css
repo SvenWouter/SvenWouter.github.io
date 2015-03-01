@@ -60,6 +60,10 @@ div.container{
 	margin-bottom: 0px;
 }
 
+#homeimg{
+	width: 100%;
+}
+
 #securityimg{
 	width: 350px;
 }
