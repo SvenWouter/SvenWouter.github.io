@@ -52,22 +52,38 @@ function getPhotos(){
 }
 
 function enlargePhoto(){
-	$(".overlay").fadeIn(1000);
+	$(".overlay").fadeIn(500);
 	var src = $(this).attr("src");
 	var enhancedSrc = src.replace("_q.jpg", "_c.jpg");
-	var image = "<img src = '" + enhancedSrc + "'/>";
-	$("#bigPhotoSection").html(image);
-	$("#bigPhotoSection").fadeIn(1000);
+	var img = new Image();
+	img.src = enhancedSrc;
+	setSurroundingImages(this);
+	$("#bigPhotoSection").html(img);
+	$("#bigPhotoSection").fadeIn(500);
 }
 
 function hidePhotoSection(){
-	$(".overlay").fadeOut(500);
 	$("#bigPhotoSection").fadeOut(500, function(){
 		$("#bigPhotoSection").empty();
+		$(".overlay").fadeOut(500);
 	});
 }
 
 function nextPhoto(){
-	
+	$("#bigPhotoSection").fadeOut(300, function(){
+		$("#bigPhotoSection").empty();
+		var img = new Image();
+		var nextImg = $("#bigPhotoSection").data("surroundingImg").next;
+		img.src = nextImg.attr('src').replace("_q.jpg", "_c.jpg");
+		$("#bigPhotoSection").html(img);
+		setSurroundingImages(nextImg);
+		$("#bigPhotoSection").fadeIn(500);
+	});
+}
+
+function setSurroundingImages(photo){
+	var nextSource = $(photo).parent().next().children();
+	var prevSource = $(photo).parent().prev().children();
+	$("#bigPhotoSection").data("surroundingImg", {next: nextSource, prev: prevSource});
 }
 	
