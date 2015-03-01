@@ -34,8 +34,8 @@
 					Om een (multiplayer) browsergame te spelen is er een verbinding nodig tussen de de speler en het spel. Met andere woorden, er is een verbinding tussen de webclient en de webserver nodig. Hiervoor is het HTTP protocol nodig. We zullen HTTP even kort behandelen.
 					</p>
 					
-					<figure id = "protocol">
-						<img src = "https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png" alt = "Voorbeeld van een html request" id = "protocolimg">
+					<figure id = "standardfigure">
+						<img id = "protocolimg" src = "https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png" alt = "Voorbeeld van een html request">
 						<figcaption>Een voorbeeld van hoe de code van een request is opgebouwd</figcaption>
 					</figure>
 					
@@ -46,8 +46,61 @@
 					Om een game te realiseren zijn er nu een aantal <a href ="http://blogs.shephertz.com/2013/01/28/picking-the-right-communication-protocol-for-your-game/" class = "source">mogelijkheden</a>. Elke manier met zijn eigen voor- en nadelen.
 					</p>
 					<p>
-					Eén van die mogelijkheden is AJAX/Long Polling. Hierbij hou je altijd een verbinding open met de server. De server pushed iets terug zodra deze iets te melden heeft. Nadat dit antwoord is ontvangen wordt er vanuit de webclient meteen een nieuwe HTTPrequest uitgezonden en zo wordt er weer een nieuwe actieve lijn opgezet. Nadeel van deze manier is de performance. Het opzetten van een nieuwe connectie kost elke keer de round-trip time. Aan de andere kant, het maakt het wel makkelijk om een crossplatform game te maken.
+					Eén van die mogelijkheden is AJAX/Long Polling. Hierbij hou je altijd een verbinding open met de server. De server pushed iets terug zodra deze iets te melden heeft. Nadat dit antwoord is ontvangen wordt er vanuit de webclient meteen een nieuwe HTTPrequest uitgezonden en zo wordt er weer een nieuwe actieve lijn opgezet. Nadeel van deze manier is de performance. Het opzetten van een nieuwe connectie kost elke keer de round-trip time. Aan de andere kant, het maakt het wel makkelijk om een crossplatform game te maken. Een voorbeeld van hoe dit eruit kan zien (bron: <a class = "source" href = "http://webcooker.net/ajax-polling-requests-php-jquery/">webcooker.com</a>):
 					</p>
+					
+					<div class = "container">
+						<pre>
+function messages_longpolling( timestamp, lastId ){
+   var t;
+
+   if( typeof lastId == 'undefined' ){
+	  lastId = 0;
+   }
+
+   jQuery.ajax({
+	  url: 'stream.php',
+	  type: 'GET',
+	  data: 'timestamp=' + timestamp + '&amp;lastId=' + lastId,
+	  dataType: 'json',
+	  success: function( payload ){
+		 clearInterval( t );
+		 if( payload.status == 'results' || payload.status == 'no-results' ){
+			t=setTimeout( function(){
+			   messages_longpolling( payload.timestamp, payload.lastId);
+			}, 1000 );
+			if( payload.status == 'results' ){
+			   jQuery.each( payload.data, function(i,msg){
+				  if( jQuery('.no-items').size() == 1 ){
+					 jQuery('.items').empty();
+				  }
+				  if( jQuery('#' + msg.id).size() == 0 ){
+					 jQuery('.items').prepend( '&lt;/pre&gt;
+&lt;ul&gt;
+	&lt;li id=&quot;' + msg.id + '&quot;&gt;' + msg.id + '. ' + msg.message + '&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;
+
+' );
+				  }
+			   });
+			}
+		 } else if( payload.status == 'error' ){
+			alert('We got confused, Please refresh the page!');
+		 }
+	  },
+	  error: function(){
+		 clearInterval( t );
+		 t=setTimeout( function(){
+			messages_longpolling( payload.timestamp, payload.lastId );
+		 }, 15000 );
+	  }
+   });
+}
+messages_longpolling( '&lt;!--?php echo time(); ?--&gt;' );
+					</pre>
+					</div>
+					
 					<p>
 					Een ander manier is de AJAX server push waarbij de server een lading aan notifications kan sturen naar de webclient zonder dat deze een nieuwe request hoeft te sturen. De verbinding blijft tot stand omdat de server de response niet afrond. Het nadeel hiervan is dat het verkeer eenrichtingsverkeer is geworden. Update vanaf de Webclient kunnen niet meer richting de server worden gestuurd. Hiervoor moet toch weer een nieuwe request gestuurd worden.
 					</p>
