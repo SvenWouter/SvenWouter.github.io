@@ -46,6 +46,18 @@ footer{
 	text-align: right;
 }
 
+#protocol{
+	float: right;
+	margin-bottom: 0px;
+}
+
+#protocolimg{
+	width: 400px;
+}
+
+figcaption{
+	font-size: x-small;
+}
 
 ::-webkit-scrollbar {
     width: 11px;
