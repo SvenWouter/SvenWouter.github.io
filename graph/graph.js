@@ -6,39 +6,39 @@ $(document).ready(function () {
 			}, 
 			{
 				"label": "Zylom.com",
-				"data": [[0, 41]]
+				"data": [[1, 41]]
 			}, 
 			{
 				"label": "Spelletjes.nl",
-				"data": [[0, 41]]
+				"data": [[2, 41]]
 			}, 
 			{
 				"label": "Funnygames.nl",
-				"data": [[0, 32]]
+				"data": [[3, 32]]
 			}, 
 			{
 				"label": "Spellen.nl",
-				"data": [[0, 31]]
+				"data": [[4, 31]]
 			}, 
 			{
 				"label": "Speelzolder.nl",
-				"data": [[0, 30]]
+				"data": [[5, 30]]
 			}, 
 			{
 				"label": "Spelle.nl",
-				"data": [[0, 24]]
+				"data": [[6, 24]]
 			},
 			{
 				"label": "Speelplein.nl",
-				"data": [[0, 14]]
+				"data": [[7, 14]]
 			}, 
 			{
 				"label": "Spelletjesplein.nl",
-				"data": [[0, 9]]
+				"data": [[8, 9]]
 			}, 
 			{
 				"label": "Nuspelen.nl",
-				"data": [[0, 9]]
+				"data": [[9, 9]]
 			}];
 	
 	var ticks = [
@@ -50,14 +50,15 @@ $(document).ready(function () {
         series: {
             bars: {
                 show: true,
-            },
+            }
          },
          bars: {
 			 align: "center",
-			 barWidth: 0.5
+			 barWidth: 0.7
 		 },
 		 xaxis: {
-             ticks: ticks
+             ticks: ticks,
+		     autoscaleMargin: 0.05,
          },
          yaxis: {
             tickFormatter: function (v, axis) {
