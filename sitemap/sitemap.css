@@ -1,0 +1,12 @@
+main{
+	height: 800px;
+}
+
+#onderwerpList, #extrasList{
+	display: none;
+}
+
+section p{
+	margin: 50px;
+	cursor: pointer;
+}

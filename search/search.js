@@ -1,3 +1,8 @@
+/*
+	Jammer genoeg is het ontwikkelen van een volledig werkend navigatie systeem door vergrote foto's niet gelukt.
+	Door het gebrek aan tijd hebben we genoegen genomen met het alleen vooruit navigeren als je op de foto klikt.
+*/
+
 $(document).ready(function(){
 	
 		getPhotos();
@@ -53,11 +58,11 @@ function getPhotos(){
 
 function enlargePhoto(){
 	$(".overlay").fadeIn(500);
+	setSurroundingImages(this);
 	var src = $(this).attr("src");
 	var enhancedSrc = src.replace("_q.jpg", "_c.jpg");
 	var img = new Image();
 	img.src = enhancedSrc;
-	setSurroundingImages(this);
 	$("#bigPhotoSection").html(img);
 	$("#bigPhotoSection").fadeIn(500);
 }
@@ -74,7 +79,7 @@ function nextPhoto(){
 		$("#bigPhotoSection").empty();
 		var img = new Image();
 		var nextImg = $("#bigPhotoSection").data("surroundingImg").next;
-		img.src = nextImg.attr('src').replace("_q.jpg", "_c.jpg");
+		img.src = nextImg.attr("src").replace("_q.jpg", "_c.jpg");
 		$("#bigPhotoSection").html(img);
 		setSurroundingImages(nextImg);
 		$("#bigPhotoSection").fadeIn(500);
@@ -84,6 +89,10 @@ function nextPhoto(){
 function setSurroundingImages(photo){
 	var nextSource = $(photo).parent().next().children();
 	var prevSource = $(photo).parent().prev().children();
+	if(typeof(nextSource) == "undefined" || nextSource == null || nextSource == "")
+		 nextSource = $(photo).parent().parent().next().first().children();
+	if(typeof(prevSource) === "undefined")
+		prevSource = $(photo).parent().parent().prev().first().children();
 	$("#bigPhotoSection").data("surroundingImg", {next: nextSource, prev: prevSource});
 }
 	
